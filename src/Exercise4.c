@@ -31,11 +31,10 @@ int main(int argc, char *argv[]) {
 			if (1 <= column && column <= (height - row)  || (height + row) <= column && column <= (2*height - 1)) {
 				printf ("  ");
 			}  else if (row >= border+1 && row <= height - border) {
-		
-				if (column > (height - (row-1) +border) && column < (height +(row-1) -border)){
+				if (column >= (height - (row-1) +border) && column <= (height +(row-1) -border)){
 					printf("  ");
 				} 
-			
+		
 		}  else  { 
 				printf("* ");
 			}
