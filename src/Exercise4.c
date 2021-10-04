@@ -9,7 +9,7 @@ Ex:
 |           * * *                    |
 |         * *   * *                  |
 |       * *       * *                |
-|     * *           * *              |
+|     * *           * *              | row : borders +1  --> height - borders:  soluongsao - borders*2
 |   * * * * * * * * * * *            |
 | * * * * * * * * * * * * *          |
 |____________________________________|
@@ -24,6 +24,23 @@ int main(int argc, char *argv[]) {
 	int height = atoi(argv[1]);
 	int border = atoi(argv[2]);
 	//Your codes here
+	for (int row =1; row <=height; row++) {
 	
+		
+		for (int column =1; column<= 2*height -1; column++) {
+			if (1 <= column && column <= (height - row)  || (height + row) <= column && column <= (2*height - 1)) {
+				printf ("  ");
+			}  else if (row >= border+1 && row <= height - border) {
+		
+				if (column > (height - (row-1) +border) && column < (height +(row-1) -border)){
+					printf("  ");
+				} 
+			
+		}  else  { 
+				printf("* ");
+			}
+		}
+		printf("\n");
+	}
 	return 0;
 }
